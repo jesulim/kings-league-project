@@ -25,7 +25,7 @@ jobs:
     needs: test
     runs-on: ubuntu-22.04
     name: Deploy API to Cloudflare Workers
-    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }} # Only deploy if the push is from the main repo
+    # if: ${{ github.event.pull_request.head.repo.full_name == github.repository }} # Only deploy if the push is from the main repo
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
