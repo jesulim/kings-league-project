@@ -1,6 +1,5 @@
 import * as cheerio from 'cheerio'
-import { writeFile } from 'node:fs/promises'
-import path from 'node:path'
+import { writeDBFile, TEAMS, PRESIDENTS } from '../db/index.js'
 
 const URLS = {
   leaderboard: 'https://kingsleague.pro/estadisticas/clasificacion/'
@@ -26,34 +25,50 @@ async function getLeaderBoard () {
     redCards: { selector: '.fs-table-text_9', typeOf: 'number' }
   }
 
-  const cleanText = text => text
-    .replace(/\t|\n|\s:/g, '')
-    .replace(/.*:/g, ' ')
-    .trim()
+  const getTeamFrom = ({ name }) => {
+    const { presidentId, ...restOfTeam } = TEAMS.find(
+      (team) => team.name === name
+    )
+    const president = PRESIDENTS.find(
+      (president) => president.id === presidentId
+    )
+    return { ...restOfTeam, president }
+  }
+
+  const cleanText = (text) =>
+    text
+      .replace(/\t|\n|\s:/g, '')
+      .replace(/.*:/g, ' ')
+      .trim()
 
   const leaderBoardSelectorEntries = Object.entries(LEADERBOARD_SELECTORS)
 
   const leaderboard = []
-
   $rows.each((_, el) => {
-    const leaderBoardEnttries = leaderBoardSelectorEntries.map(([key, { selector, typeOf }]) => {
-      const rawValue = $(el).find(selector).text()
-      const cleanedValue = cleanText(rawValue)
+    const leaderBoardEntries = leaderBoardSelectorEntries.map(
+      ([key, { selector, typeOf }]) => {
+        const rawValue = $(el).find(selector).text()
+        const cleanedValue = cleanText(rawValue)
 
-      const value = typeOf === 'number'
-        ? Number(cleanedValue)
-        : cleanedValue
+        const value = typeOf === 'number' ? Number(cleanedValue) : cleanedValue
 
-      return [key, value]
+        return [key, value]
+      }
+    )
+
+    const { team: teamName, ...leaderboardForTeam } =
+      Object.fromEntries(leaderBoardEntries)
+    const team = getTeamFrom({ name: teamName })
+
+    leaderboard.push({
+      ...leaderboardForTeam,
+      team
     })
-
-    leaderboard.push(Object.fromEntries(leaderBoardEnttries))
   })
+
   return leaderboard
 }
 
 const leaderboard = await getLeaderBoard()
 
-const filePath = path.join(process.cwd(), './db/leaderboard.json')
-
-await writeFile(filePath, JSON.stringify(leaderboard, null, 2), 'utf-8')
+await writeDBFile('leaderboard', leaderboard)
