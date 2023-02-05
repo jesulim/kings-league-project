@@ -55,7 +55,7 @@
   {
     "wins": 4,
     "loses": 1,
-    "scoredGoals": 7,
+    "scoredGoals": 10,
     "concededGoals": 6,
     "yellowCards": 6,
     "redCards": 0,
@@ -80,9 +80,9 @@
   },
   {
     "wins": 3,
-    "loses": -4,
+    "loses": 2,
     "scoredGoals": 15,
-    "concededGoals": 7,
+    "concededGoals": 12,
     "yellowCards": 1,
     "redCards": 0,
     "team": {
@@ -106,7 +106,7 @@
   },
   {
     "wins": 3,
-    "loses": -1,
+    "loses": 2,
     "scoredGoals": 16,
     "concededGoals": 15,
     "yellowCards": 1,
@@ -215,62 +215,6 @@
     }
   },
   {
-    "wins": 0,
-    "loses": 2,
-    "scoredGoals": 9,
-    "concededGoals": 16,
-    "yellowCards": 5,
-    "redCards": 0,
-    "team": {
-      "id": "pio-fc",
-      "name": "PIO FC",
-      "image": "https://kings-league-api.midudev.workers.dev/static/logos/pio.svg",
-      "url": "",
-      "channel": "https://twitch.tv/rivers_gg",
-      "coach": "???",
-      "socialNetworks": [
-        "https://www.twitch.tv/rivers_gg",
-        "https://twitter.com/PIO_FC"
-      ],
-      "players": [],
-      "president": {
-        "id": "rivers",
-        "name": "Rivers",
-        "image": "https://kings-league-api.jesulim.workers.dev/static/presidents/rivers.png",
-        "teamId": "pio-fc"
-      }
-    }
-  },
-  {
-    "wins": 0,
-    "loses": 5,
-    "scoredGoals": 11,
-    "concededGoals": 19,
-    "yellowCards": 3,
-    "redCards": 0,
-    "team": {
-      "id": "jijantes-fc",
-      "name": "Jijantes FC",
-      "image": "https://kings-league-api.midudev.workers.dev/static/logos/jijantes.svg",
-      "url": "",
-      "channel": "https://twitch.tv/gerardromero",
-      "coach": "???",
-      "socialNetworks": [
-        "https://www.twitch.tv/gerardromero",
-        "https://www.instagram.com/jijantesfc/?hl=es",
-        "https://twitter.com/JijantesFC?s=20&t=40PQRh7lXf2HVdUs1pe-9w",
-        "https://www.tiktok.com/@jijantesfutbolclub"
-      ],
-      "players": [],
-      "president": {
-        "id": "gerard-romero",
-        "name": "Gerard Romero",
-        "image": "https://kings-league-api.jesulim.workers.dev/static/presidents/gerard-romero.png",
-        "teamId": "jijantes-fc"
-      }
-    }
-  },
-  {
     "wins": 2,
     "loses": 3,
     "scoredGoals": 15,
@@ -325,6 +269,62 @@
         "name": "Perxitaa",
         "image": "https://kings-league-api.jesulim.workers.dev/static/presidents/perxitaa.png",
         "teamId": "los-troncos-fc"
+      }
+    }
+  },
+  {
+    "wins": 0,
+    "loses": 5,
+    "scoredGoals": 9,
+    "concededGoals": 16,
+    "yellowCards": 5,
+    "redCards": 0,
+    "team": {
+      "id": "pio-fc",
+      "name": "PIO FC",
+      "image": "https://kings-league-api.midudev.workers.dev/static/logos/pio.svg",
+      "url": "",
+      "channel": "https://twitch.tv/rivers_gg",
+      "coach": "???",
+      "socialNetworks": [
+        "https://www.twitch.tv/rivers_gg",
+        "https://twitter.com/PIO_FC"
+      ],
+      "players": [],
+      "president": {
+        "id": "rivers",
+        "name": "Rivers",
+        "image": "https://kings-league-api.jesulim.workers.dev/static/presidents/rivers.png",
+        "teamId": "pio-fc"
+      }
+    }
+  },
+  {
+    "wins": 0,
+    "loses": 5,
+    "scoredGoals": 11,
+    "concededGoals": 19,
+    "yellowCards": 3,
+    "redCards": 0,
+    "team": {
+      "id": "jijantes-fc",
+      "name": "Jijantes FC",
+      "image": "https://kings-league-api.midudev.workers.dev/static/logos/jijantes.svg",
+      "url": "",
+      "channel": "https://twitch.tv/gerardromero",
+      "coach": "???",
+      "socialNetworks": [
+        "https://www.twitch.tv/gerardromero",
+        "https://www.instagram.com/jijantesfc/?hl=es",
+        "https://twitter.com/JijantesFC?s=20&t=40PQRh7lXf2HVdUs1pe-9w",
+        "https://www.tiktok.com/@jijantesfutbolclub"
+      ],
+      "players": [],
+      "president": {
+        "id": "gerard-romero",
+        "name": "Gerard Romero",
+        "image": "https://kings-league-api.jesulim.workers.dev/static/presidents/gerard-romero.png",
+        "teamId": "jijantes-fc"
       }
     }
   }
